@@ -71,8 +71,8 @@ def main():
     f1 = argv[1]
     f2 = argv[2]
     
-    compare_file(f1, f2)
-    compare_file(f1 + '.t', f2 + '.t')
+    #compare_file(f1, f2)
+    compare_file(f1 + '.zscore', f2 + '.zscore')
     #compare_file(f1 + '.FDR', f2 + '.FDR')
     
     sys.stdout.write('\"' + os.path.basename(f1) + '\" \"' + os.path.basename(f2) + '\" are the same.\n')

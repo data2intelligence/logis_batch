@@ -1,9 +1,14 @@
 # Bias reduced logistic regression.  
 Logistic regression may fail when quasi-complete separation happens, when outcome variable separates a predictor variable or a combination of predictor variables almost completely. Also, a user may want to run multiple logistic regressions with a common set of covariates and many outcome labels. Thus, we release this package for running multiple logistic regressions with the Firth correction.  
 
-Usage: logis_batch -B background_matrix -X X_matrix -Y Y_matrix -out output [OPTIONS]  
+**Installation**: Please read the INSTALL file  
 
-Options:  
+**Test**: After compiling with configure & make, please run:  
+make check  
+
+**Usage**: logis_batch -B background_matrix -X X_matrix -Y Y_matrix -out output [OPTIONS]  
+
+**Options**:  
   
 	Netwon Raphson process:  
 	-S		Start coefficients in iteration. Default: All zeros   

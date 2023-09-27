@@ -6,11 +6,13 @@ CMD=$PWD/src/logis_batch
 
 cd ${DATA_PATH}
 
-$CMD -x RBP_motif.hg19_3UTR.targets.mat -y TCGA.all_cancers.Expression -b hg19.background.PWM.RBP -c CNA:TCGA.all_cancers.CNA -c Methylation:TCGA.all_cancers.DNA_Methylation -o test.output
+gzip -d *.gz
 
-if [ $? -ne 0 ]         # Test exit status of "Rabit"
+$CMD -B MSigDB.Hallmark.background -X CytoSig.signature -Y MSigDB.Hallmark.mat -out test.output
+
+if [ $? -ne 0 ]         # Test exit status of "logis_batch"
 then
-  echo "Rabit failure."
+  echo "logis_batch failure."
   exit 99
 fi
 
@@ -18,5 +20,6 @@ python3 $CMP output test.output
 STATUS=$?
 
 rm test.output*
+gzip *.*
 
 exit $STATUS
