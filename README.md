@@ -1,6 +1,11 @@
 # Bias reduced logistic regression.  
 The logistic regression may fail when outcome variable separates a predictor variable or a combination of predictor variables almost completely (quasi-complete separation). Also, a user may run multiple logistic regressions with a common set of covariates and many outcome labels. Thus, we release this package for running multiple logistic regressions with the Firth correction.  
 
+**Prerequisite**:  
+1, gcc >= 4.2;  
+2, gsl-2.6: https://ftp.gnu.org/gnu/gsl  (please don't use other versions, such as 2.7)
+  
+
 **Installation**: Please read the INSTALL file  
 
 **Test**: After compiling with configure & make, please run:  
